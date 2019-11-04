@@ -2,9 +2,9 @@ package wegit.resources.model;
 
 public class Vm {
     private Integer id;
-
+    /*所在宿主机的ip地址*/
     private String hostip;
-
+    /*自身ip地址*/
     private String ip;
 
     private String name;

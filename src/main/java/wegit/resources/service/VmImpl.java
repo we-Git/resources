@@ -1,12 +1,14 @@
 package wegit.resources.service;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 import wegit.resources.mapper.VmMapper;
 import wegit.resources.model.Vm;
 
 import java.util.List;
 
-public class vmImpl implements vmInter {
+@Service
+public class VmImpl implements vmInter {
     @Autowired
     private VmMapper vmMapper;
 
