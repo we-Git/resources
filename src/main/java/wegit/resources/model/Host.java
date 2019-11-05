@@ -1,5 +1,7 @@
 package wegit.resources.model;
 
+import java.util.List;
+
 public class Host {
     private Integer id;
 
@@ -14,6 +16,8 @@ public class Host {
     private String type;
 
     private String name;
+
+    private List<Vm> vmList;
 
     public Integer getId() {
         return id;
@@ -69,5 +73,13 @@ public class Host {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public List<Vm> getVmList() {
+        return vmList;
+    }
+
+    public void setVmList(List<Vm> vmList) {
+        this.vmList = vmList;
     }
 }

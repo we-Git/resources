@@ -9,12 +9,28 @@
     <result column="use" property="use" jdbcType="VARCHAR" />
     <result column="type" property="type" jdbcType="VARCHAR" />
     <result column="name" property="name" jdbcType="VARCHAR" />
+    <collection property="vmList" javaType="list" ofType="wegit.resources.model.Vm">
+        <id column="vm_id" property="id" jdbcType="INTEGER"/>
+        <result column="hostip" property="hostip" jdbcType="VARCHAR"/>
+        <result column="vm_ip" property="ip" jdbcType="VARCHAR" />
+        <result column="vm_name" property="name" jdbcType="VARCHAR" />
+    </collection>
   </resultMap>
   <sql id="Base_Column_List" >
     id, ip, hdm, cas, use, type, name
   </sql>
   <select id="selectAll" resultMap="BaseResultMap">
-    select * from host
+      select h.*,
+      v.id as vm_id,
+      v.ip as vm_ip,
+      v.hostip as hostip,
+      v.name as vm_name from host as h ,vm as v where h.ip=v.hostip
+
+      <!--select h.*,-->
+      <!--v.id as vm_id,-->
+      <!--v.ip as vm_ip,-->
+      <!--v.hostip as hostip,-->
+      <!--v.name as vm_name from host h left join vm  v on h.ip=v.hostip-->
   </select>
 
   <select id="selectByPrimaryKey" resultMap="BaseResultMap" parameterType="java.lang.Integer" >

@@ -17,7 +17,7 @@
     where id = #{id,jdbcType=INTEGER}
   </select>
 
-  <select id="selectByPrimaryKey" resultMap="BaseResultMap"  >
+  <select id="selectAll" resultMap="BaseResultMap"  >
     select from vm
   </select>
 

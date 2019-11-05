@@ -1,11 +1,12 @@
 package wegit.resources.mapper;
 
+import org.apache.ibatis.annotations.Mapper;
 import org.springframework.stereotype.Component;
 import wegit.resources.model.Host;
 
 import java.util.List;
 
-@Component
+@Mapper
 public interface HostMapper {
     int deleteByPrimaryKey(Integer id);
 

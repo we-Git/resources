@@ -7,10 +7,7 @@ package wegit.resources.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 import wegit.resources.model.Host;
 import wegit.resources.service.HostImpl;
 
@@ -23,10 +20,16 @@ public class hostController {
     HostImpl hostImpl;
 
     @GetMapping("/")
+    @ResponseBody
     public List<Host> getHostList() {
         List<Host> hostList = hostImpl.getHostList();
+        System.out.println(hostList.toString());
         return hostList;
     }
+//    public int getHostList() {
+//        return 1;
+//    }
+
 
     @PostMapping("")
     public void update(Host host) {
